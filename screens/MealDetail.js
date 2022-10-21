@@ -1,8 +1,8 @@
-import {useEffect} from 'react'
+import {useLayoutEffect} from 'react'
 import {View,Text,StyleSheet, Button, Alert,ScrollView,Image} from 'react-native'
 import Color from '../constant/Color'
 import { MEALS } from '../data/dummy-data'
-
+import IconButton from '../components/IconButton'
 
 const ListItem = props => {
     return (
@@ -14,17 +14,17 @@ const ListItem = props => {
 
 const MealDetail = props => {
     const {mealId} = props.route.params
-    console.log(props)
-    console.log(mealId)
-    useEffect(() => {
+    const headerPressButtonHanlder = () => {
+      console.log('press')
+    }
+    useLayoutEffect(() => {
         const selectMeal = MEALS.find(meal => meal.id === mealId)
-        console.log(selectMeal)
         props.navigation.setOptions({
             title: selectMeal.title,
-            headerStyle:{
-                backgroundColor:Platform.OS==='android' ? Color.primary : ''
-            },
-            headerTintColor:Platform.OS=='android' ? 'white' : Color.primary
+            headerRight: () => {
+              return <IconButton  onPress={headerPressButtonHanlder}/>
+            }
+
         });
     }, [props.navigation]);
       const selectedMeal = MEALS.find(meal => meal.id === mealId);

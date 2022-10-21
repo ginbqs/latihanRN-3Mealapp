@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import {useLayoutEffect, useState} from 'react'
 import {View,Text,StyleSheet, Platform, FlatList} from 'react-native'
 import MealItem from '../components/MealItem'
 import Color from '../constant/Color'
@@ -20,16 +20,12 @@ const CategoryMeal = ({route,navigation}) => {
 
     const displayMeals = MEALS.filter(meal => meal.categoryIds.indexOf(categoryId) >=0)
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const selectedCategory = CATEGORIES.find(val => val.id === categoryId)
         navigation.setOptions({
           title: selectedCategory.title,
-          headerStyle:{
-              backgroundColor:Platform.OS==='android' ? selectedCategory.color : ''
-          },
-          headerTintColor:Platform.OS=='android' ? 'white' : selectedCategory.color
-        });
-      }, [navigation]);
+         });
+      }, [navigation,categoryId]);
     return(
         <View style={styles.screen}>
             <Text>The Detail Meal {selected?.title}</Text>
