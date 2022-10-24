@@ -28,7 +28,7 @@ const CategoryMeal = ({route,navigation}) => {
       }, [navigation,categoryId]);
     return(
         <View style={styles.screen}>
-            <Text>The Detail Meal {selected?.title}</Text>
+            {/* <Text>The Detail Meal {selected?.title}</Text> */}
             <FlatList data={displayMeals} keyExtractor={(item,index) => item.id} renderItem={renderMealItem} />
         </View>
     )

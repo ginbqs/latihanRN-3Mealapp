@@ -7,7 +7,7 @@ import IconButton from '../components/IconButton'
 const ListItem = props => {
     return (
       <View style={styles.listItem}>
-        <Text>{props.children}</Text>
+        <Text  style={{color:'white'}}>{props.children}</Text>
       </View>
     );
   };
@@ -33,9 +33,9 @@ const MealDetail = props => {
         <ScrollView>
         <Image source={{ uri: selectedMeal.imageUrl }} style={styles.image} />
         <View style={styles.details}>
-          <Text>{selectedMeal.duration}m</Text>
-          <Text>{selectedMeal.complexity.toUpperCase()}</Text>
-          <Text>{selectedMeal.affordability.toUpperCase()}</Text>
+          <Text style={{color:'white'}}>{selectedMeal.duration}m</Text>
+          <Text style={{color:'white'}}>{selectedMeal.complexity.toUpperCase()}</Text>
+          <Text style={{color:'white'}}>{selectedMeal.affordability.toUpperCase()}</Text>
         </View>
         <Text style={styles.title}>Ingredients</Text>
         {selectedMeal.ingredients.map(ingredient => (
@@ -61,7 +61,8 @@ const styles = StyleSheet.create({
     },
     title: {
       fontSize: 22,
-      textAlign: 'center'
+      textAlign: 'center',
+      color: 'white'
     },
     listItem: {
       marginVertical: 10,

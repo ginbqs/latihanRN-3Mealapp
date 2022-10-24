@@ -8,7 +8,7 @@ import Colors from '../constant/Color';
 const FilterSwitch = props => {
   return (
     <View style={styles.filterContainer}>
-      <Text>{props.label}</Text>
+      <Text  style={{color:'white'}}>{props.label}</Text>
       <Switch
         trackColor={{ true: Colors.primaryColor }}
         thumbColor={Platform.OS === 'android' ? Colors.primaryColor : ''}
@@ -103,7 +103,8 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     margin: 20,
-    textAlign: 'center'
+    textAlign: 'center',
+    color: 'white'
   },
   filterContainer: {
     flexDirection: 'row',

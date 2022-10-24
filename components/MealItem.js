@@ -13,9 +13,9 @@ const MealItem = props => {
                         </ImageBackground>
                     </View>
                     <View style={styles.containerDetail}>
-                        <Text>{props.duration}m</Text>
-                        <Text>{props.complexity.toUpperCase()}</Text>
-                        <Text>{props.affordability.toUpperCase()}</Text>
+                        <Text style={{color:'white'}}>{props.duration}m</Text>
+                        <Text style={{color:'white'}}>{props.complexity.toUpperCase()}</Text>
+                        <Text style={{color:'white'}}>{props.affordability.toUpperCase()}</Text>
                     </View>
                     <View></View>
                 </View>
@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     } ,
     title:{
         fontSize:18,
+        color:'white',
         fontWeight:'bold'
     },
     containerTitle:{
